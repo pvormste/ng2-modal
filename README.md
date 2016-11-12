@@ -104,7 +104,7 @@ ng2-modal depends on bootstrap, you'll need to include below link before using n
 
       ```html 
         <button (click)="modalOpen()" class="btn btn-primary">Modal Demo</button>
-        <modal (modalOutput)="getData($event)"></modal>
+        <ng2modal (modalOutput)="getData($event)"></ng2modal>
       ```
       ```typescript
          modalOpen(){
