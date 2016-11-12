@@ -1,9 +1,10 @@
-import {Directive, Input, HostBinding} from 'angular2/core';
+import {Directive, HostBinding, Input} from '@angular/core';
 
-// todo: add animate
-// todo: add init and on change
-@Directive({selector: '[open]'})
-export class Open {
+@Directive({
+  selector: '[ng2modalOpen]'
+})
+export class OpenDirective {
+
   @HostBinding('style.display')
   private display:string;
   @HostBinding('class.in')
@@ -11,12 +12,12 @@ export class Open {
   private isExpanded:boolean = true;
 
   @Input()
-  private set open(value:boolean) {
+  private set ng2modalOpen(value:boolean) {
     this.isExpanded = value;
     this.toggle();
   }
 
-  private get open():boolean {
+  private get ng2modalOpen():boolean {
     return this.isExpanded;
   }
 
@@ -48,4 +49,5 @@ export class Open {
     this.isExpanded = true;
     this.display = 'block';
   }
+
 }
